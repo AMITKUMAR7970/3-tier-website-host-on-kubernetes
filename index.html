@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Tier Kubernetes Web Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <h1 class="header__title">
+                        <i class="fas fa-cube"></i>
+                        3-Tier Kubernetes Application
+                    </h1>
+                    <p class="header__subtitle">Complete project demonstrating modern 3-tier architecture on Kubernetes</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="container">
+                <div class="nav__tabs">
+                    <button class="nav__tab active" data-tab="overview">
+                        <i class="fas fa-home"></i>
+                        Overview
+                    </button>
+                    <button class="nav__tab" data-tab="frontend">
+                        <i class="fab fa-react"></i>
+                        Frontend
+                    </button>
+                    <button class="nav__tab" data-tab="backend">
+                        <i class="fas fa-server"></i>
+                        Backend
+                    </button>
+                    <button class="nav__tab" data-tab="database">
+                        <i class="fas fa-database"></i>
+                        Database
+                    </button>
+                    <button class="nav__tab" data-tab="kubernetes">
+                        <i class="fas fa-dharmachakra"></i>
+                        Kubernetes
+                    </button>
+                    <button class="nav__tab" data-tab="deployment">
+                        <i class="fas fa-rocket"></i>
+                        Deployment
+                    </button>
+                    <button class="nav__tab" data-tab="files">
+                        <i class="fas fa-folder-tree"></i>
+                        Files
+                    </button>
+                    <button class="nav__tab" data-tab="docker">
+                        <i class="fab fa-docker"></i>
+                        Docker
+                    </button>
+                    <button class="nav__tab" data-tab="monitoring">
+                        <i class="fas fa-chart-line"></i>
+                        Monitoring
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Overview Tab -->
+                <section class="tab-content active" id="overview">
+                    <div class="overview">
+                        <div class="overview__intro">
+                            <h2>3-Tier Architecture Overview</h2>
+                            <p>This project demonstrates a complete 3-tier web application deployed on Kubernetes, showcasing modern containerized architecture patterns.</p>
+                        </div>
+                        
+                        <div class="architecture">
+                            <div class="tier-grid">
+                                <div class="tier-card" data-tier="frontend">
+                                    <div class="tier-card__icon">
+                                        <i class="fab fa-react"></i>
+                                    </div>
+                                    <h3>Presentation Tier</h3>
+                                    <div class="tier-card__tech">React.js</div>
+                                    <p>User interface built with React.js, served on port 3000</p>
+                                    <div class="tier-card__features">
+                                        <span class="feature-tag">Responsive Design</span>
+                                        <span class="feature-tag">Component-Based</span>
+                                        <span class="feature-tag">Modern UI/UX</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="tier-card" data-tier="backend">
+                                    <div class="tier-card__icon">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <h3>Application Tier</h3>
+                                    <div class="tier-card__tech">Node.js/Express</div>
+                                    <p>RESTful API server built with Node.js and Express, running on port 5000</p>
+                                    <div class="tier-card__features">
+                                        <span class="feature-tag">RESTful APIs</span>
+                                        <span class="feature-tag">Middleware</span>
+                                        <span class="feature-tag">Authentication</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="tier-card" data-tier="database">
+                                    <div class="tier-card__icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <h3>Data Tier</h3>
+                                    <div class="tier-card__tech">MongoDB</div>
+                                    <p>NoSQL database for persistent data storage, running on port 27017</p>
+                                    <div class="tier-card__features">
+                                        <span class="feature-tag">Document Store</span>
+                                        <span class="feature-tag">Scalable</span>
+                                        <span class="feature-tag">Persistent Volume</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview__benefits">
+                            <h3>Why 3-Tier Architecture?</h3>
+                            <div class="benefits-grid">
+                                <div class="benefit-item">
+                                    <i class="fas fa-layer-group"></i>
+                                    <h4>Separation of Concerns</h4>
+                                    <p>Each tier has distinct responsibilities, making the application easier to maintain and scale.</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                    <h4>Scalability</h4>
+                                    <p>Individual tiers can be scaled independently based on demand and resource requirements.</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h4>Security</h4>
+                                    <p>Network segmentation and controlled access between tiers enhance overall security posture.</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-tools"></i>
+                                    <h4>Maintainability</h4>
+                                    <p>Changes to one tier don't directly impact others, enabling independent development and deployment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Frontend Tab -->
+                <section class="tab-content" id="frontend">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fab fa-react"></i> Frontend Tier - React.js</h2>
+                            <p>Modern, responsive user interface built with React.js</p>
+                        </div>
+
+                        <div class="tier-details">
+                            <div class="detail-card">
+                                <h3>Technology Stack</h3>
+                                <ul>
+                                    <li><strong>Framework:</strong> React.js 18+</li>
+                                    <li><strong>Build Tool:</strong> Create React App</li>
+                                    <li><strong>Styling:</strong> CSS Modules / Styled Components</li>
+                                    <li><strong>State Management:</strong> React Hooks</li>
+                                    <li><strong>HTTP Client:</strong> Axios</li>
+                                </ul>
+                            </div>
+
+                            <div class="detail-card">
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li>Component-based architecture</li>
+                                    <li>Responsive design for all devices</li>
+                                    <li>Real-time data updates</li>
+                                    <li>Form validation and error handling</li>
+                                    <li>Authentication flow</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Sample React Component</h3>
+                            <div class="code-block">
+                                <button class="copy-btn" data-clipboard-target="#react-component">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <pre><code class="language-javascript" id="react-component">import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const UserList = () => {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get('/api/users');
+        setUsers(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch users');
+        setLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">{error}</div>;
+
+  return (
+    <div className="user-list">
+      <h2>Users</h2>
+      {users.map(user => (
+        <div key={user.id} className="user-card">
+          <h3>{user.name}</h3>
+          <p>{user.email}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default UserList;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Backend Tab -->
+                <section class="tab-content" id="backend">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-server"></i> Backend Tier - Node.js/Express</h2>
+                            <p>RESTful API server providing business logic and data access</p>
+                        </div>
+
+                        <div class="tier-details">
+                            <div class="detail-card">
+                                <h3>Technology Stack</h3>
+                                <ul>
+                                    <li><strong>Runtime:</strong> Node.js 16+</li>
+                                    <li><strong>Framework:</strong> Express.js</li>
+                                    <li><strong>Database Driver:</strong> Mongoose (MongoDB)</li>
+                                    <li><strong>Authentication:</strong> JWT</li>
+                                    <li><strong>Validation:</strong> Joi</li>
+                                    <li><strong>Logging:</strong> Winston</li>
+                                </ul>
+                            </div>
+
+                            <div class="detail-card">
+                                <h3>API Endpoints</h3>
+                                <ul>
+                                    <li><code>GET /api/users</code> - List all users</li>
+                                    <li><code>POST /api/users</code> - Create new user</li>
+                                    <li><code>GET /api/users/:id</code> - Get user by ID</li>
+                                    <li><code>PUT /api/users/:id</code> - Update user</li>
+                                    <li><code>DELETE /api/users/:id</code> - Delete user</li>
+                                    <li><code>POST /api/auth/login</code> - User authentication</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Express Server Setup</h3>
+                            <div class="code-block">
+                                <button class="copy-btn" data-clipboard-target="#express-server">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <pre><code class="language-javascript" id="express-server">const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const helmet = require('helmet');
+const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/auth');
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Database connection
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch((err) => console.error('MongoDB connection error:', err));
+
+// Routes
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'OK', 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: 'Something went wrong!' });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Database Tab -->
+                <section class="tab-content" id="database">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-database"></i> Database Tier - MongoDB</h2>
+                            <p>NoSQL database for flexible, scalable data storage</p>
+                        </div>
+
+                        <div class="tier-details">
+                            <div class="detail-card">
+                                <h3>Database Features</h3>
+                                <ul>
+                                    <li><strong>Type:</strong> NoSQL Document Database</li>
+                                    <li><strong>Version:</strong> MongoDB 5.0</li>
+                                    <li><strong>Storage:</strong> Persistent Volumes (5Gi)</li>
+                                    <li><strong>Backup:</strong> Automated snapshots</li>
+                                    <li><strong>Replication:</strong> Configurable replica sets</li>
+                                </ul>
+                            </div>
+
+                            <div class="detail-card">
+                                <h3>Collections</h3>
+                                <ul>
+                                    <li><strong>users</strong> - User account information</li>
+                                    <li><strong>products</strong> - Product catalog</li>
+                                    <li><strong>orders</strong> - Order transactions</li>
+                                    <li><strong>sessions</strong> - User session data</li>
+                                    <li><strong>logs</strong> - Application logs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Mongoose Schema Example</h3>
+                            <div class="code-block">
+                                <button class="copy-btn" data-clipboard-target="#mongoose-schema">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <pre><code class="language-javascript" id="mongoose-schema">const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Name is required'],
+    trim: true,
+    maxlength: [50, 'Name cannot exceed 50 characters']
+  },
+  email: {
+    type: String,
+    required: [true, 'Email is required'],
+    unique: true,
+    lowercase: true,
+    match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
+  },
+  password: {
+    type: String,
+    required: [true, 'Password is required'],
+    minlength: [6, 'Password must be at least 6 characters']
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user'
+  },
+  isActive: {
+    type: Boolean,
+    default: true
+  },
+  lastLogin: {
+    type: Date,
+    default: Date.now
+  }
+}, {
+  timestamps: true
+});
+
+// Hash password before saving
+userSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) return next();
+  
+  try {
+    const salt = await bcrypt.genSalt(12);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Compare password method
+userSchema.methods.comparePassword = async function(candidatePassword) {
+  return bcrypt.compare(candidatePassword, this.password);
+};
+
+module.exports = mongoose.model('User', userSchema);</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Kubernetes Tab -->
+                <section class="tab-content" id="kubernetes">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-dharmachakra"></i> Kubernetes Configuration</h2>
+                            <p>Complete Kubernetes manifests for container orchestration</p>
+                        </div>
+
+                        <div class="k8s-configs">
+                            <div class="config-tabs">
+                                <button class="config-tab active" data-config="namespace">Namespace</button>
+                                <button class="config-tab" data-config="configmap">ConfigMap</button>
+                                <button class="config-tab" data-config="secrets">Secrets</button>
+                                <button class="config-tab" data-config="mongodb">MongoDB</button>
+                                <button class="config-tab" data-config="backend">Backend</button>
+                                <button class="config-tab" data-config="frontend">Frontend</button>
+                                <button class="config-tab" data-config="ingress">Ingress</button>
+                            </div>
+
+                            <div class="config-content">
+                                <div class="config-section active" id="config-namespace">
+                                    <h3>Namespace Configuration</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#k8s-namespace">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="k8s-namespace">apiVersion: v1
+kind: Namespace
+metadata:
+  name: three-tier-app</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="config-section" id="config-configmap">
+                                    <h3>ConfigMap Configuration</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#k8s-configmap">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="k8s-configmap">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: three-tier-app
+data:
+  DATABASE_URL: mongodb://mongodb-service:27017/threetierapp
+  NODE_ENV: production</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="config-section" id="config-secrets">
+                                    <h3>Secrets Configuration</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#k8s-secrets">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="k8s-secrets">apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+  namespace: three-tier-app
+type: Opaque
+data:
+  JWT_SECRET: bXlzdXBlcnNlY3JldGp3dA==
+  MONGODB_PASSWORD: cGFzc3dvcmQxMjM=</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="config-section" id="config-mongodb">
+                                    <h3>MongoDB Deployment</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#k8s-mongodb">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="k8s-mongodb">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: three-tier-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:5.0
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: MONGODB_PASSWORD
+        volumeMounts:
+        - name: mongodb-storage
+          mountPath: /data/db
+      volumes:
+      - name: mongodb-storage
+        persistentVolumeClaim:
+          claimName: mongodb-pvc</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="config-section" id="config-backend">
+                                    <h3>Backend Deployment</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#k8s-backend">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="k8s-backend">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: three-tier-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: your-registry/backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: DATABASE_URL
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: JWT_SECRET</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="config-section" id="config-frontend">
+                                    <h3>Frontend Deployment</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#k8s-frontend">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="k8s-frontend">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: three-tier-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: your-registry/frontend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: REACT_APP_API_URL
+          value: "http://backend-service:5000"</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="config-section" id="config-ingress">
+                                    <h3>Ingress Configuration</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#k8s-ingress">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="k8s-ingress">apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  namespace: three-tier-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: threetier.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
+            port:
+              number: 80
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 80</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Deployment Tab -->
+                <section class="tab-content" id="deployment">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-rocket"></i> Deployment Guide</h2>
+                            <p>Step-by-step instructions to deploy the 3-tier application</p>
+                        </div>
+
+                        <div class="deployment-steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Create Kubernetes Cluster</h3>
+                                    <p>Set up your Kubernetes cluster using minikube, EKS, GKE, or AKS</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step1-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step1-code"># Using minikube
+minikube start --driver=docker
+
+# Verify cluster is running
+kubectl cluster-info</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Build and Push Docker Images</h3>
+                                    <p>Build Docker images for frontend and backend, then push to registry</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step2-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step2-code"># Build images
+docker build -t your-registry/frontend:latest ./frontend
+docker build -t your-registry/backend:latest ./backend
+
+# Push to registry
+docker push your-registry/frontend:latest
+docker push your-registry/backend:latest</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Create Namespace</h3>
+                                    <p>Create dedicated namespace for the application</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step3-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step3-code">kubectl apply -f kubernetes/namespace.yaml</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Apply ConfigMaps and Secrets</h3>
+                                    <p>Deploy configuration and secret management</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step4-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step4-code">kubectl apply -f kubernetes/configmap.yaml
+kubectl apply -f kubernetes/secrets.yaml</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h3>Deploy MongoDB</h3>
+                                    <p>Deploy database tier with persistent storage</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step5-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step5-code">kubectl apply -f kubernetes/mongodb/mongodb-pv.yaml
+kubectl apply -f kubernetes/mongodb/mongodb-pvc.yaml
+kubectl apply -f kubernetes/mongodb/mongodb-deployment.yaml
+kubectl apply -f kubernetes/mongodb/mongodb-service.yaml</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <h3>Deploy Backend</h3>
+                                    <p>Deploy API tier services</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step6-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step6-code">kubectl apply -f kubernetes/backend/backend-deployment.yaml
+kubectl apply -f kubernetes/backend/backend-service.yaml</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">7</div>
+                                <div class="step-content">
+                                    <h3>Deploy Frontend</h3>
+                                    <p>Deploy presentation tier</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step7-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step7-code">kubectl apply -f kubernetes/frontend/frontend-deployment.yaml
+kubectl apply -f kubernetes/frontend/frontend-service.yaml</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">8</div>
+                                <div class="step-content">
+                                    <h3>Configure Ingress</h3>
+                                    <p>Set up external access to the application</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step8-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step8-code">kubectl apply -f kubernetes/ingress.yaml</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">9</div>
+                                <div class="step-content">
+                                    <h3>Verify Deployment</h3>
+                                    <p>Check that all pods are running correctly</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step9-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step9-code">kubectl get pods -n three-tier-app
+kubectl get services -n three-tier-app
+kubectl get ingress -n three-tier-app</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">10</div>
+                                <div class="step-content">
+                                    <h3>Test Application</h3>
+                                    <p>Verify the application is accessible and functioning</p>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#step10-code">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-bash" id="step10-code"># Add to /etc/hosts (for local testing)
+echo "$(minikube ip) threetier.local" | sudo tee -a /etc/hosts
+
+# Test endpoints
+curl http://threetier.local
+curl http://threetier.local/api/health</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Files Tab -->
+                <section class="tab-content" id="files">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-folder-tree"></i> Project File Structure</h2>
+                            <p>Complete project structure with interactive file browser</p>
+                        </div>
+
+                        <div class="file-browser">
+                            <div class="file-tree">
+                                <div class="tree-item">
+                                    <i class="fas fa-folder-open"></i>
+                                    <span>three-tier-kubernetes-app/</span>
+                                    <div class="tree-children">
+                                        <div class="tree-item" data-file="frontend-folder">
+                                            <i class="fas fa-folder"></i>
+                                            <span>frontend/</span>
+                                        </div>
+                                        <div class="tree-item" data-file="backend-folder">
+                                            <i class="fas fa-folder"></i>
+                                            <span>backend/</span>
+                                        </div>
+                                        <div class="tree-item" data-file="kubernetes-folder">
+                                            <i class="fas fa-folder"></i>
+                                            <span>kubernetes/</span>
+                                        </div>
+                                        <div class="tree-item" data-file="docker-compose">
+                                            <i class="fas fa-file-code"></i>
+                                            <span>docker-compose.yml</span>
+                                        </div>
+                                        <div class="tree-item" data-file="readme">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span>README.md</span>
+                                        </div>
+                                        <div class="tree-item" data-file="deploy-script">
+                                            <i class="fas fa-file-code"></i>
+                                            <span>deploy.sh</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="file-content">
+                                <div class="file-placeholder">
+                                    <i class="fas fa-mouse-pointer"></i>
+                                    <p>Click on a file in the tree to view its contents</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Docker Tab -->
+                <section class="tab-content" id="docker">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fab fa-docker"></i> Docker Configuration</h2>
+                            <p>Containerization setup for all application tiers</p>
+                        </div>
+
+                        <div class="docker-configs">
+                            <div class="docker-tabs">
+                                <button class="docker-tab active" data-docker="frontend">Frontend Dockerfile</button>
+                                <button class="docker-tab" data-docker="backend">Backend Dockerfile</button>
+                                <button class="docker-tab" data-docker="compose">Docker Compose</button>
+                            </div>
+
+                            <div class="docker-content">
+                                <div class="docker-section active" id="docker-frontend">
+                                    <h3>Frontend Dockerfile</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#dockerfile-frontend">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-dockerfile" id="dockerfile-frontend">FROM node:16-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="docker-section" id="docker-backend">
+                                    <h3>Backend Dockerfile</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#dockerfile-backend">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-dockerfile" id="dockerfile-backend">FROM node:16-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 5000
+CMD ["npm", "start"]</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="docker-section" id="docker-compose">
+                                    <h3>Docker Compose Configuration</h3>
+                                    <div class="code-block">
+                                        <button class="copy-btn" data-clipboard-target="#docker-compose-file">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                        <pre><code class="language-yaml" id="docker-compose-file">version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    environment:
+      DATABASE_URL: mongodb://admin:password123@mongodb:27017/threetierapp?authSource=admin
+      JWT_SECRET: mysupersecretjwt
+      NODE_ENV: development
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    environment:
+      REACT_APP_API_URL: http://localhost:5000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  mongodb_data:</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Monitoring Tab -->
+                <section class="tab-content" id="monitoring">
+                    <div class="tier-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-chart-line"></i> Monitoring & Scaling</h2>
+                            <p>Observability, monitoring, and scaling strategies for the application</p>
+                        </div>
+
+                        <div class="monitoring-sections">
+                            <div class="monitoring-grid">
+                                <div class="monitoring-card">
+                                    <div class="monitoring-card__icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <h3>Prometheus Monitoring</h3>
+                                    <p>Collect metrics from all application tiers using Prometheus and Grafana dashboards.</p>
+                                    <ul>
+                                        <li>Application metrics</li>
+                                        <li>Infrastructure monitoring</li>
+                                        <li>Custom dashboards</li>
+                                        <li>Alert rules</li>
+                                    </ul>
+                                </div>
+
+                                <div class="monitoring-card">
+                                    <div class="monitoring-card__icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <h3>Logging with ELK Stack</h3>
+                                    <p>Centralized logging using Elasticsearch, Logstash, and Kibana for log analysis.</p>
+                                    <ul>
+                                        <li>Structured logging</li>
+                                        <li>Log aggregation</li>
+                                        <li>Search and filtering</li>
+                                        <li>Log visualization</li>
+                                    </ul>
+                                </div>
+
+                                <div class="monitoring-card">
+                                    <div class="monitoring-card__icon">
+                                        <i class="fas fa-expand-arrows-alt"></i>
+                                    </div>
+                                    <h3>Horizontal Pod Autoscaling</h3>
+                                    <p>Automatically scale pods based on CPU, memory, or custom metrics.</p>
+                                    <ul>
+                                        <li>CPU-based scaling</li>
+                                        <li>Memory-based scaling</li>
+                                        <li>Custom metrics</li>
+                                        <li>Vertical pod autoscaling</li>
+                                    </ul>
+                                </div>
+
+                                <div class="monitoring-card">
+                                    <div class="monitoring-card__icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <h3>Health Checks</h3>
+                                    <p>Implement comprehensive health checks and readiness probes.</p>
+                                    <ul>
+                                        <li>Liveness probes</li>
+                                        <li>Readiness probes</li>
+                                        <li>Startup probes</li>
+                                        <li>Circuit breakers</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="hpa-example">
+                                <h3>Horizontal Pod Autoscaler Example</h3>
+                                <div class="code-block">
+                                    <button class="copy-btn" data-clipboard-target="#hpa-config">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <pre><code class="language-yaml" id="hpa-config">apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: backend-hpa
+  namespace: three-tier-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: backend
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <p>&copy; 2024 3-Tier Kubernetes Application. Built with ❤️ for learning and demonstration.</p>
+                    <div class="footer__links">
+                        <a href="https://kubernetes.io/" target="_blank">Kubernetes Docs</a>
+                        <a href="https://docker.com/" target="_blank">Docker</a>
+                        <a href="https://reactjs.org/" target="_blank">React</a>
+                        <a href="https://nodejs.org/" target="_blank">Node.js</a>
+                        <a href="https://mongodb.com/" target="_blank">MongoDB</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-docker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
