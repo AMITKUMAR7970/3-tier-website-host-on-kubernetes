@@ -1,0 +1,35 @@
+File Path,Description,Type,Tier,Category
+backend/.env,Environment variables for backend,env,Backend,Configuration
+backend/Dockerfile,Container definition for Node.js backend,dockerfile,Backend,Container
+backend/models/User.js,Mongoose model for user data,javascript,Backend,Source Code
+backend/package.json,Node.js dependencies and scripts,json,Backend,Configuration
+backend/routes/users.js,REST API routes for user operations,javascript,Backend,Source Code
+backend/server.js,Express.js server with middleware setup,javascript,Backend,Source Code
+deploy.sh,Automated deployment script for Kubernetes,shell,DevOps,Scripts
+docker-compose.yml,Local development environment setup,yaml,DevOps,Configuration
+nginx.conf,NGINX reverse proxy configuration,conf,DevOps,Configuration
+scripts/mongo-init.js,MongoDB initialization script,javascript,DevOps,Source Code
+.gitignore,Git ignore patterns,gitignore,Documentation,Documentation
+LICENSE,MIT license for the project,license,Documentation,Documentation
+README.md,Complete project documentation,markdown,Documentation,Documentation
+frontend/Dockerfile,Container definition for React.js frontend,dockerfile,Frontend,Container
+frontend/package.json,Node.js dependencies and scripts,json,Frontend,Configuration
+frontend/public/index.html,HTML template for React app,html,Frontend,Source Code
+frontend/src/App.css,Styling for React components,css,Frontend,Source Code
+frontend/src/App.js,Main React component with API integration,javascript,Frontend,Source Code
+frontend/src/index.css,Global CSS styles,css,Frontend,Source Code
+frontend/src/index.js,React application entry point,javascript,Frontend,Source Code
+kubernetes/backend/backend-deployment.yaml,Backend API deployment configuration,yaml,Infrastructure,Configuration
+kubernetes/backend/backend-service.yaml,Service for backend API access,yaml,Infrastructure,Configuration
+kubernetes/configmap.yaml,Configuration data for applications,yaml,Infrastructure,Configuration
+kubernetes/frontend/frontend-deployment.yaml,Frontend deployment configuration,yaml,Infrastructure,Configuration
+kubernetes/frontend/frontend-service.yaml,Service for frontend access,yaml,Infrastructure,Configuration
+kubernetes/hpa.yaml,Horizontal Pod Autoscaler configuration,yaml,Infrastructure,Configuration
+kubernetes/ingress.yaml,Ingress controller for external access,yaml,Infrastructure,Configuration
+kubernetes/mongodb/mongodb-deployment.yaml,MongoDB deployment configuration,yaml,Infrastructure,Configuration
+kubernetes/mongodb/mongodb-pv.yaml,Persistent Volume for MongoDB,yaml,Infrastructure,Configuration
+kubernetes/mongodb/mongodb-pvc.yaml,Persistent Volume Claim for MongoDB,yaml,Infrastructure,Configuration
+kubernetes/mongodb/mongodb-service.yaml,Service for MongoDB access,yaml,Infrastructure,Configuration
+kubernetes/namespace.yaml,Kubernetes namespace definition,yaml,Infrastructure,Configuration
+kubernetes/network-policy.yaml,Network security policies,yaml,Infrastructure,Configuration
+kubernetes/secrets.yaml,Encrypted secrets for sensitive data,yaml,Infrastructure,Configuration
