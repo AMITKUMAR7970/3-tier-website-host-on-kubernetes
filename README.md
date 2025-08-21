@@ -1,3 +1,7 @@
+## 🔗 Project Link
+
+Explore the deployed 3-tier web application hosted on Kubernetes here:  
+https://amitkumar7970.github.io/3-tier-website-host-on-kubernetes/link
 
 
 # 3-Tier Web Application on Kubernetes
